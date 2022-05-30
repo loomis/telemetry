@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "genjs": "pbjs -t static-module -w es6 -o ./src/opentelemetry-proto.js opentelemetry-proto/opentelemetry/proto/trace/v1/trace.proto opentelemetry-proto/opentelemetry/proto/metrics/v1/metrics.proto opentelemetry-proto/opentelemetry/proto/logs/v1/logs.proto opentelemetry-proto/opentelemetry/proto/common/v1/common.proto opentelemetry-proto/opentelemetry/proto/resource/v1/resource.proto",
+    "gents": "pbts -o ./src/opentelemetry-proto.d.ts ./src/opentelemetry-proto.js",
     "build": "webpack"
   },
   "repository": {
@@ -19,7 +21,6 @@
   },
   "homepage": "https://github.com/loomis/telemetry#readme",
   "devDependencies": {
-    "@types/lodash": "^4.14.182",
     "css-loader": "^6.7.1",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
@@ -28,6 +29,6 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "protobufjs": "~6.11.3"
   }
 }
